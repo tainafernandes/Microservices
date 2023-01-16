@@ -1,8 +1,11 @@
 package io.github.tainafernandes.mscards.application;
 
 import io.github.tainafernandes.mscards.application.representation.CardSaveRequest;
+import io.github.tainafernandes.mscards.application.representation.CardsByClientResponse;
 import io.github.tainafernandes.mscards.domain.Card;
+import io.github.tainafernandes.mscards.domain.ClientCard;
 import java.util.List;
+import java.util.stream.Collectors;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -18,6 +21,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 public class CardsResource {
     private final CardService cardService;
+    private final ClientCardService clientCardService;
 
     @GetMapping
     public String status(){
@@ -34,5 +38,14 @@ public class CardsResource {
     public ResponseEntity<List<Card>> getCardsIncomeUpTo(@RequestParam("income") Long income) {
         List<Card> list = cardService.getCardIncomeLessEqual(income);
         return ResponseEntity.ok(list);
+    }
+
+    @GetMapping(params = "cpf")
+    public ResponseEntity<List<CardsByClientResponse>> getCardsByClient(@RequestParam("cpf") String cpf){
+        List<ClientCard> list = clientCardService.listCardByCpf(cpf);
+        List<CardsByClientResponse> resultList = list.stream()
+                .map(CardsByClientResponse::fromModel)
+                .collect(Collectors.toList());
+        return ResponseEntity.ok(resultList);
     }
 }

@@ -5,11 +5,11 @@ spring:
     gateway:
       discovery:
         locator:
-          enabled: true
+          enable: true
           lower-case-service-id: true
 
 server:
-  port:8080
+  port: 8080
 
 eureka:
   client:
