@@ -52,14 +52,14 @@ public class CreditAppraiserController {
         }
     }
 
-    @PostMapping("issuance-cards")
-    public ResponseEntity cardRequest(@RequestBody CardIssuanceRequestData data){
-        try{
-            CardRequestProtocol cardRequestProtocol = creditAppraiserService
-                    .requestCardIssuance(data);
-            return ResponseEntity.ok(cardRequestProtocol);
-        } catch (ErrorRequestCardException e){
-            return ResponseEntity.internalServerError().body(e.getMessage());
-        }
-    }
+//    @PostMapping("issuance-cards")
+//    public ResponseEntity cardRequest(@RequestBody CardIssuanceRequestData data){
+//        try{
+//            CardRequestProtocol cardRequestProtocol = creditAppraiserService
+//                    .requestCardIssuance(data);
+//            return ResponseEntity.ok(cardRequestProtocol);
+//        } catch (ErrorRequestCardException e){
+//            return ResponseEntity.internalServerError().body(e.getMessage());
+//        }
+//    }
 }

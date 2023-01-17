@@ -3,7 +3,6 @@ package io.github.tainafernandes.mscreditappraiser.application;
 import feign.FeignException;
 import io.github.tainafernandes.mscreditappraiser.application.ex.ClientsDataNotFoundException;
 import io.github.tainafernandes.mscreditappraiser.application.ex.ErrorComunicationMicroservicesException;
-import io.github.tainafernandes.mscreditappraiser.application.ex.ErrorRequestCardException;
 import io.github.tainafernandes.mscreditappraiser.domain.model.ApprovedCard;
 import io.github.tainafernandes.mscreditappraiser.domain.model.Card;
 import io.github.tainafernandes.mscreditappraiser.domain.model.ClientCard;
@@ -25,7 +24,7 @@ import org.springframework.stereotype.Service;
 public class CreditAppraiserService {
     private final ClientResourceClient client;
     private final CardsResourceClient cards;
-    private final PublisherCardIssuanceRequest publisherCardIssuanceRequest;
+   // private final PublisherCardIssuanceRequest publisherCardIssuanceRequest;
 
     public ClientStatus getClientStatus(String cpf) throws ClientsDataNotFoundException, ErrorComunicationMicroservicesException {
         try {
@@ -80,14 +79,14 @@ public class CreditAppraiserService {
         }
     }
 
-    public CardRequestProtocol requestCardIssuance(CardIssuanceRequestData data){
-        try{
-            publisherCardIssuanceRequest.cardRequest(data);
-            var protocol = UUID.randomUUID().toString();
-            return new CardRequestProtocol(protocol);
-
-        } catch (Exception e){
-            throw new ErrorRequestCardException(e.getMessage());
-        }
-    }
+//    public CardRequestProtocol requestCardIssuance(CardIssuanceRequestData data){
+//        try{
+//            publisherCardIssuanceRequest.cardRequest(data);
+//            var protocol = UUID.randomUUID().toString();
+//            return new CardRequestProtocol(protocol);
+//
+//        } catch (Exception e){
+//            throw new ErrorRequestCardException(e.getMessage());
+//        }
+//    }
 }

@@ -5,5 +5,5 @@ import lombok.Data;
 @Data
 public class EvaluationData {
     private String cpf;
-    private String income;
+    private Long income;
 }
