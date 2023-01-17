@@ -3,6 +3,8 @@ package io.github.tainafernandes.mscreditappraiser.application;
 import io.github.tainafernandes.mscreditappraiser.application.ex.ClientsDataNotFoundException;
 import io.github.tainafernandes.mscreditappraiser.application.ex.ErrorComunicationMicroservicesException;
 import io.github.tainafernandes.mscreditappraiser.application.ex.ErrorRequestCardException;
+import io.github.tainafernandes.mscreditappraiser.domain.model.CardIssuanceRequestData;
+import io.github.tainafernandes.mscreditappraiser.domain.model.CardRequestProtocol;
 import io.github.tainafernandes.mscreditappraiser.domain.model.ClientEvaluationReturn;
 import io.github.tainafernandes.mscreditappraiser.domain.model.ClientStatus;
 import io.github.tainafernandes.mscreditappraiser.domain.model.EvaluationData;
@@ -52,14 +54,14 @@ public class CreditAppraiserController {
         }
     }
 
-//    @PostMapping("issuance-cards")
-//    public ResponseEntity cardRequest(@RequestBody CardIssuanceRequestData data){
-//        try{
-//            CardRequestProtocol cardRequestProtocol = creditAppraiserService
-//                    .requestCardIssuance(data);
-//            return ResponseEntity.ok(cardRequestProtocol);
-//        } catch (ErrorRequestCardException e){
-//            return ResponseEntity.internalServerError().body(e.getMessage());
-//        }
-//    }
+    @PostMapping("issuance-cards")
+    public ResponseEntity cardRequest(@RequestBody CardIssuanceRequestData data){
+        try{
+            CardRequestProtocol cardRequestProtocol = creditAppraiserService
+                    .requestCardIssuance(data);
+            return ResponseEntity.ok(cardRequestProtocol);
+        } catch (ErrorRequestCardException e){
+            return ResponseEntity.internalServerError().body(e.getMessage());
+        }
+    }
 }

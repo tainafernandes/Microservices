@@ -3,16 +3,21 @@ package io.github.tainafernandes.mscreditappraiser.application;
 import feign.FeignException;
 import io.github.tainafernandes.mscreditappraiser.application.ex.ClientsDataNotFoundException;
 import io.github.tainafernandes.mscreditappraiser.application.ex.ErrorComunicationMicroservicesException;
+import io.github.tainafernandes.mscreditappraiser.application.ex.ErrorRequestCardException;
 import io.github.tainafernandes.mscreditappraiser.domain.model.ApprovedCard;
 import io.github.tainafernandes.mscreditappraiser.domain.model.Card;
+import io.github.tainafernandes.mscreditappraiser.domain.model.CardIssuanceRequestData;
+import io.github.tainafernandes.mscreditappraiser.domain.model.CardRequestProtocol;
 import io.github.tainafernandes.mscreditappraiser.domain.model.ClientCard;
 import io.github.tainafernandes.mscreditappraiser.domain.model.ClientData;
 import io.github.tainafernandes.mscreditappraiser.domain.model.ClientEvaluationReturn;
 import io.github.tainafernandes.mscreditappraiser.domain.model.ClientStatus;
 import io.github.tainafernandes.mscreditappraiser.infra.clients.CardsResourceClient;
 import io.github.tainafernandes.mscreditappraiser.infra.clients.ClientResourceClient;
+import io.github.tainafernandes.mscreditappraiser.infra.mqueue.PublisherCardIssuanceRequest;
 import java.math.BigDecimal;
 import java.util.List;
+import java.util.UUID;
 import java.util.stream.Collectors;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -24,7 +29,7 @@ import org.springframework.stereotype.Service;
 public class CreditAppraiserService {
     private final ClientResourceClient client;
     private final CardsResourceClient cards;
-   // private final PublisherCardIssuanceRequest publisherCardIssuanceRequest;
+    private final PublisherCardIssuanceRequest publisherCardIssuanceRequest;
 
     public ClientStatus getClientStatus(String cpf) throws ClientsDataNotFoundException, ErrorComunicationMicroservicesException {
         try {
@@ -79,14 +84,14 @@ public class CreditAppraiserService {
         }
     }
 
-//    public CardRequestProtocol requestCardIssuance(CardIssuanceRequestData data){
-//        try{
-//            publisherCardIssuanceRequest.cardRequest(data);
-//            var protocol = UUID.randomUUID().toString();
-//            return new CardRequestProtocol(protocol);
-//
-//        } catch (Exception e){
-//            throw new ErrorRequestCardException(e.getMessage());
-//        }
-//    }
+    public CardRequestProtocol requestCardIssuance(CardIssuanceRequestData data){
+        try{
+            publisherCardIssuanceRequest.cardRequest(data);
+            var protocol = UUID.randomUUID().toString();
+            return new CardRequestProtocol(protocol);
+
+        } catch (Exception e){
+            throw new ErrorRequestCardException(e.getMessage());
+        }
+    }
 }
