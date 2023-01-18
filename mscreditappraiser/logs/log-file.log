@@ -39,3 +39,12 @@
 2023-01-18 11:33:57.883  INFO 41525 --- [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
 2023-01-18 11:33:57.885  INFO 41525 --- [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
 2023-01-18 11:34:10.682  INFO 41525 --- [http-nio-auto-1-exec-1] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 222 ms
+2023-01-18 11:38:37.056  INFO 41525 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-01-18 11:43:37.057  INFO 41525 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-01-18 11:47:06.031  INFO 41525 --- [SpringApplicationShutdownHook] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application MSCREDITAPPRAISER with eureka with status DOWN
+2023-01-18 11:47:06.032  INFO 41525 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1674053226032, current=DOWN, previous=UP]
+2023-01-18 11:47:06.032  INFO 41525 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MSCREDITAPPRAISER/mscreditappraiser:6e6017260d39381c7ee03f64adda6810: registering service...
+2023-01-18 11:47:06.037  INFO 41525 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MSCREDITAPPRAISER/mscreditappraiser:6e6017260d39381c7ee03f64adda6810 - registration status: 204
+2023-01-18 11:47:06.053  INFO 41525 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2023-01-18 11:47:09.054  WARN 41525 --- [DiscoveryClient-1] c.netflix.discovery.TimedSupervisorTask  : task supervisor shutting down, can't accept the task
+2023-01-18 11:47:09.057  INFO 41525 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Unregistering ...
