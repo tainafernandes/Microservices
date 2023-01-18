@@ -1,0 +1,41 @@
+2023-01-18 11:33:28.623  INFO 41525 --- [restartedMain] i.g.t.m.MscreditappraiserApplication     : Starting MscreditappraiserApplication using Java 19.0.1 on N1004712 with PID 41525 (/home/taina-fernandes/ProjetosJava/MicroService/mscreditappraiser/target/classes started by taina-fernandes in /home/taina-fernandes/ProjetosJava/MicroService/mscreditappraiser)
+2023-01-18 11:33:28.627  INFO 41525 --- [restartedMain] i.g.t.m.MscreditappraiserApplication     : No active profile set, falling back to 1 default profile: "default"
+2023-01-18 11:33:28.762  INFO 41525 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-01-18 11:33:28.763  INFO 41525 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-01-18 11:33:31.271  INFO 41525 --- [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=44a1a1c3-9b54-3b96-97de-a701747e6aab
+2023-01-18 11:33:33.080  INFO 41525 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+2023-01-18 11:33:33.099  INFO 41525 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-01-18 11:33:33.100  INFO 41525 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.62]
+2023-01-18 11:33:33.211  INFO 41525 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-01-18 11:33:33.212  INFO 41525 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4448 ms
+2023-01-18 11:33:33.866  WARN 41525 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2023-01-18 11:33:33.999  INFO 41525 --- [restartedMain] o.s.c.openfeign.FeignClientFactoryBean   : For 'msclients' URL not provided. Will try picking an instance via load-balancing.
+2023-01-18 11:33:34.130  INFO 41525 --- [restartedMain] o.s.c.openfeign.FeignClientFactoryBean   : For 'mscards' URL not provided. Will try picking an instance via load-balancing.
+2023-01-18 11:33:36.585  INFO 41525 --- [restartedMain] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2023-01-18 11:33:36.676  WARN 41525 --- [restartedMain] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2023-01-18 11:33:36.694  INFO 41525 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 17 endpoint(s) beneath base path '/actuator'
+2023-01-18 11:33:36.811  INFO 41525 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 36137 (http) with context path ''
+2023-01-18 11:33:36.812  INFO 41525 --- [restartedMain] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 36137
+2023-01-18 11:33:36.820  INFO 41525 --- [restartedMain] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2023-01-18 11:33:36.996  INFO 41525 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2023-01-18 11:33:37.004  INFO 41525 --- [restartedMain] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-01-18 11:33:37.051  INFO 41525 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2023-01-18 11:33:37.052  INFO 41525 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2023-01-18 11:33:37.052  INFO 41525 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2023-01-18 11:33:37.052  INFO 41525 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2023-01-18 11:33:37.052  INFO 41525 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2023-01-18 11:33:37.052  INFO 41525 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2023-01-18 11:33:37.053  INFO 41525 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2023-01-18 11:33:37.884  INFO 41525 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2023-01-18 11:33:37.895  INFO 41525 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2023-01-18 11:33:37.900  INFO 41525 --- [restartedMain] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2023-01-18 11:33:37.908  INFO 41525 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1674052417906 with initial instances count: 2
+2023-01-18 11:33:37.916  INFO 41525 --- [restartedMain] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application MSCREDITAPPRAISER with eureka with status UP
+2023-01-18 11:33:37.920  INFO 41525 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1674052417920, current=UP, previous=STARTING]
+2023-01-18 11:33:37.929  INFO 41525 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MSCREDITAPPRAISER/mscreditappraiser:6e6017260d39381c7ee03f64adda6810: registering service...
+2023-01-18 11:33:38.164  INFO 41525 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MSCREDITAPPRAISER/mscreditappraiser:6e6017260d39381c7ee03f64adda6810 - registration status: 204
+2023-01-18 11:33:38.214  INFO 41525 --- [restartedMain] i.g.t.m.MscreditappraiserApplication     : Started MscreditappraiserApplication in 11.175 seconds (JVM running for 12.342)
+2023-01-18 11:33:57.882  INFO 41525 --- [http-nio-auto-1-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-01-18 11:33:57.883  INFO 41525 --- [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-01-18 11:33:57.885  INFO 41525 --- [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2023-01-18 11:34:10.682  INFO 41525 --- [http-nio-auto-1-exec-1] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 222 ms
